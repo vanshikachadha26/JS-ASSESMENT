@@ -1,0 +1,32 @@
+let nfts = [];
+
+function mintNFT(name, description, image) {
+  const nft = {
+      name: name,
+      description: description,
+      image: image
+  };
+  nfts.push(nft);
+}
+
+function listNFTs() {
+  nfts.forEach((nft, index) => {
+      console.log(`NFT ${index + 1}:`);
+      console.log(`Name: ${nft.name}`);
+      console.log(`Description: ${nft.description}`);
+      console.log(`Image: ${nft.image}`);
+      console.log('---------------------');
+  });
+}
+
+function getTotalSupply() {
+  return nfts.length;
+}
+
+mintNFT("Leonardo da Vinci", "This is the first PAINTING ", "https://en.wikipedia.org/wiki/Mona_Lisa");
+mintNFT("Vincent Willem van Gogh", "This is the second PAINTING", "https://en.wikipedia.org/wiki/The_Starry_Night");
+mintNFT("Johannes Vermeer", "This is the third PAINTING", "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring");
+
+listNFTs();
+
+console.log(`Total Supply: ${getTotalSupply()}`);
